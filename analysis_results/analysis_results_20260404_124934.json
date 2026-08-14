@@ -1,0 +1,107 @@
+{
+  "summary_statistics": {
+    "total_articles": 17,
+    "total_alerts": 0,
+    "unique_sources": 5,
+    "analysis_timestamp": "2026-04-04T12:49:28.834339",
+    "time_range_hours": 48
+  },
+  "classification_performance": {
+    "disaster_type_distribution": {
+      "general_disaster": 13,
+      "storm": 2,
+      "fire": 1,
+      "building_collapse": 1
+    },
+    "avg_confidence_by_type": {
+      "building_collapse": 64.0,
+      "fire": 95.0,
+      "general_disaster": 39.61538461538461,
+      "storm": 95.0
+    },
+    "avg_severity_by_type": {
+      "building_collapse": 100.0,
+      "fire": 100.0,
+      "general_disaster": 62.30769230769231,
+      "storm": 92.5
+    }
+  },
+  "urgency_analysis": {
+    "urgency_distribution": {
+      "low": 10,
+      "critical": 5,
+      "medium": 2
+    },
+    "high_critical_count": 5,
+    "high_critical_percentage": 29.411764705882355,
+    "urgency_by_disaster_type": {
+      "building_collapse_critical": 1,
+      "fire_critical": 1,
+      "general_disaster_critical": 3,
+      "general_disaster_low": 10,
+      "storm_medium": 2
+    }
+  },
+  "location_insights": {
+    "top_affected_locations": {
+      "Niger": 6,
+      "Plateau": 4,
+      "Jos": 3,
+      "Abuja": 3,
+      "Benue": 2,
+      "Imo": 2,
+      "Kaduna": 1,
+      "Kano": 1,
+      "Kwara": 1,
+      "Sokoto": 1,
+      "Warri": 1,
+      "Gombe": 1
+    },
+    "unique_locations": 12
+  },
+  "temporal_patterns": {
+    "date_range": {
+      "earliest": "2026-04-03T21:10:35",
+      "latest": "2026-04-04T11:36:07"
+    },
+    "articles_by_day": {
+      "2026-04-03": 1,
+      "2026-04-04": 16
+    }
+  },
+  "source_performance": {
+    "articles_per_source": {
+      "daily_trust": 7,
+      "vanguard": 3,
+      "thisday": 3,
+      "channels": 2,
+      "premium_times": 2
+    },
+    "avg_confidence_per_source": {
+      "channels": 67.5,
+      "daily_trust": 39.285714285714285,
+      "premium_times": 40.0,
+      "thisday": 66.33333333333333,
+      "vanguard": 58.333333333333336
+    },
+    "alerts_per_source": {
+      "thisday": 2,
+      "channels": 1,
+      "vanguard": 1,
+      "daily_trust": 1
+    }
+  },
+  "sentiment_analysis": {
+    "sentiment_distribution": {
+      "negative": 16,
+      "positive": 1
+    },
+    "sentiment_by_urgency": {
+      "critical_negative": 4,
+      "critical_positive": 1,
+      "low_negative": 10,
+      "medium_negative": 2
+    },
+    "avg_sentiment_confidence": 52.349713795325336
+  }
+}

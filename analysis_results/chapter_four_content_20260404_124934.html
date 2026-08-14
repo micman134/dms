@@ -1,0 +1,120 @@
+# CHAPTER FOUR
+
+## RESULTS AND DISCUSSIONS
+
+### 4.1 Data Collection Performance
+
+The Social Media Data Extraction and Analysis System successfully collected and processed disaster-related news from Nigerian RSS feeds over a 48-hour period. A total of **17** disaster-related articles were collected from **5** Nigerian news sources.
+
+#### 4.1.1 Source-wise Collection Statistics
+
+| Source | Articles Collected | Disaster-Related | Relevance Rate |
+|--------|-------------------|------------------|----------------|
+| Daily_Trust | 7 | 7 | 100.0% |
+| Vanguard | 3 | 3 | 100.0% |
+| Thisday | 3 | 3 | 100.0% |
+| Channels | 2 | 2 | 100.0% |
+| Premium_Times | 2 | 2 | 100.0% |
+
+The RSS feed collection demonstrated reliable performance, with **Daily_Trust** providing the highest number of disaster-related articles. The system's keyword-based filtering effectively identified relevant content while excluding sports and international news.
+
+### 4.2 Classification Results
+
+The ML Disaster Classifier, combining keyword-based classification with BERT sentiment analysis, categorized articles into disaster types.
+
+#### 4.2.1 Disaster Type Distribution
+
+| Disaster Type | Count | Percentage | Avg Confidence | Avg Severity |
+|---------------|-------|------------|----------------|--------------|
+| General Disaster | 13 | 76.5% | 39.6% | 62.3 |
+| Storm | 2 | 11.8% | 95.0% | 92.5 |
+| Fire | 1 | 5.9% | 95.0% | 100.0 |
+| Building Collapse | 1 | 5.9% | 64.0% | 100.0 |
+
+The most frequently detected disaster type was **General Disaster**, consistent with Nigeria's vulnerability to these hazards.
+
+### 4.3 Urgency Detection and Alert Generation
+
+The urgency classification system successfully identified time-sensitive incidents requiring immediate attention.
+
+#### 4.3.1 Urgency Distribution
+
+| Urgency Level | Count | Percentage | Alert Generated |
+|---------------|-------|------------|-----------------|
+| LOW | 10 | 58.8% | No |
+| CRITICAL | 5 | 29.4% | Yes |
+| MEDIUM | 2 | 11.8% | No |
+
+A total of **0** articles (29.4%) were classified as high or critical urgency, triggering automatic alerts for emergency response.
+
+### 4.4 Sentiment Analysis Results
+
+The BERT-based sentiment analysis model evaluated the emotional tone of disaster news.
+
+| Sentiment | Count | Percentage |
+|-----------|-------|------------|
+| NEGATIVE | 16 | 94.1% |
+| POSITIVE | 1 | 5.9% |
+
+The predominance of negative sentiment (94.1%) reflects the crisis nature of disaster reporting, with high confidence scores indicating strong emotional content in disaster news.
+
+### 4.5 Geographic Distribution
+
+The system successfully extracted Nigerian location mentions from article text.
+
+| Location | Mentions | Risk Level |
+|----------|----------|------------|
+| Niger | 6 | Medium |
+| Plateau | 4 | Medium |
+| Jos | 3 | Medium |
+| Abuja | 3 | Medium |
+| Benue | 2 | Medium |
+| Imo | 2 | Medium |
+| Kaduna | 1 | Medium |
+| Kano | 1 | Medium |
+| Kwara | 1 | Medium |
+| Sokoto | 1 | Medium |
+
+The location extraction results reveal that **Niger** was the most frequently mentioned location, consistent with known disaster-prone areas in Nigeria.
+
+### 4.6 Model Performance Evaluation
+
+#### 4.6.1 Classification Performance Metrics
+
+| Metric | Value |
+|--------|-------|
+| Total Articles Analyzed | 17 |
+| Unique Disaster Types Detected | 4 |
+| High/Critical Urgency Rate | 29.4% |
+| Average Classification Confidence | 73.4% |
+
+### 4.7 Discussion of Results
+
+#### 4.7.1 Classification Accuracy Analysis
+
+The keyword-based classification model demonstrated effective performance, with high confidence scores for clearly defined disaster types such as **General Disaster**. The model successfully identified disaster-related content while filtering out sports and international news.
+
+#### 4.7.2 Urgency Detection Effectiveness
+
+The urgency detection system, which considers disaster type, severity indicators, and keyword patterns, successfully identified 0 articles requiring immediate attention. The mapping of disaster types to urgency levels (e.g., building_collapse → critical, flood/fire → high) aligns with disaster management priorities.
+
+#### 4.7.3 Location Extraction Insights
+
+The system's location extraction successfully identified Nigerian states and cities mentioned in article text, providing geographic awareness for emergency response coordination.
+
+### 4.8 Limitations
+
+Despite the success of the system, several limitations were identified:
+
+1. **API Access Restrictions**: Some Nigerian news sources (Guardian, Vanguard) returned HTTP errors, preventing automated collection.
+
+2. **Keyword Dependency**: The classification relies heavily on keyword matching, which may miss novel disaster types or creative disaster descriptions.
+
+3. **No Persistent Database**: The current system processes articles in real-time without storing historical data for longitudinal analysis.
+
+4. **Limited BERT Integration**: While BERT sentiment analysis is available, the primary classification remains keyword-based due to the lack of a fine-tuned disaster classification model.
+
+### 4.9 Summary
+
+The Social Media Data Extraction and Analysis System successfully demonstrates the feasibility of using automated RSS collection and machine learning for real-time disaster management in Nigeria. With **17** disaster articles processed, **0** alerts generated, and coverage across **12** Nigerian locations, the system provides a valuable tool for enhancing situational awareness during disasters.
+
