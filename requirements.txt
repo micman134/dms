@@ -1,4 +1,6 @@
-# flask-api/requirements.txt (add these)
-
+Flask
+flask-cors
+python-dotenv
+gunicorn
 feedparser==6.0.10
 beautifulsoup4==4.12.0
