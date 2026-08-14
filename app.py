@@ -15,8 +15,7 @@ from ml_disaster_classifier import MLDisasterClassifier
 # Import RSS collector
 from rss_news_collector import RSSNewsCollector
 
-# Import database
-from database import Database
+
 
 # Load environment variables
 load_dotenv()
@@ -38,9 +37,6 @@ ml_classifier = MLDisasterClassifier()
 
 # Initialize RSS collector
 rss_collector = RSSNewsCollector()
-
-# Initialize database connection
-db = Database()
 
 # ============================================================
 # BACKGROUND STORAGE HELPER
@@ -309,19 +305,7 @@ def get_news_alerts():
         logger.error(f"Error getting alerts: {e}")
         return jsonify({'success': False, 'error': str(e)}), 500
 
-@app.route('/api/news/db-count', methods=['GET'])
-def db_article_count():
-    """Debug: confirm articles are actually landing in MySQL"""
-    try:
-        stored = db.get_news_articles(limit=200, min_relevance=0, days_back=7)
-        return jsonify({
-            'success': True,
-            'db_connected': db.is_connected(),
-            'stored_count': len(stored)
-        })
-    except Exception as e:
-        logger.error(f"Error checking DB count: {e}")
-        return jsonify({'success': False, 'error': str(e)}), 500
+
 
 @app.route('/api/news/sources', methods=['GET'])
 def get_news_sources():
